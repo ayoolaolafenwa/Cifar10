@@ -1,0 +1,10 @@
+#load dataset
+(train_x, train_y), (test_x, test_y) = cifar10.load_data()
+
+#normalize the pixel values of images
+train_x = train_x.astype('float32')/255
+test_x = test_x.astype('float32')/255
+
+#convert labels to vectors
+train_y = keras.utils.to_categorical(train_y, 10)
+test_y = keras.utils.to_categorical(test_y, 10)
